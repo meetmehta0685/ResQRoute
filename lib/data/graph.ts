@@ -1,0 +1,68 @@
+import type { GraphData } from "../types";
+
+export const GRAPH_DATA: GraphData = {
+  nodes: [
+    { id: "HOSPITAL", label: "Hospital", x: 0.05, y: 0.5 },
+    { id: "FAST_1", label: "North junction", x: 0.3, y: 0.75 },
+    { id: "FAST_2", label: "North avenue", x: 0.65, y: 0.75 },
+    { id: "SAFE_1", label: "South junction", x: 0.3, y: 0.25 },
+    { id: "SAFE_2", label: "South avenue", x: 0.65, y: 0.25 },
+    { id: "INCIDENT", label: "Incident", x: 0.95, y: 0.5 },
+  ],
+  edges: [
+    {
+      id: "HOSPITAL_FAST_1",
+      from: "HOSPITAL",
+      to: "FAST_1",
+      distance_m: 500,
+      base_time_s: 50,
+      congestion: 0.2,
+      risk: 0.2,
+    },
+    {
+      id: "FAST_1_FAST_2",
+      from: "FAST_1",
+      to: "FAST_2",
+      distance_m: 500,
+      base_time_s: 100,
+      congestion: 0.95,
+      risk: 0.25,
+    },
+    {
+      id: "FAST_2_INCIDENT",
+      from: "FAST_2",
+      to: "INCIDENT",
+      distance_m: 500,
+      base_time_s: 50,
+      congestion: 0.2,
+      risk: 0.2,
+    },
+    {
+      id: "HOSPITAL_SAFE_1",
+      from: "HOSPITAL",
+      to: "SAFE_1",
+      distance_m: 700,
+      base_time_s: 85,
+      congestion: 0.2,
+      risk: 0.1,
+    },
+    {
+      id: "SAFE_1_SAFE_2",
+      from: "SAFE_1",
+      to: "SAFE_2",
+      distance_m: 700,
+      base_time_s: 85,
+      congestion: 0.2,
+      risk: 0.1,
+    },
+    {
+      id: "SAFE_2_INCIDENT",
+      from: "SAFE_2",
+      to: "INCIDENT",
+      distance_m: 700,
+      base_time_s: 85,
+      congestion: 0.2,
+      risk: 0.1,
+    },
+  ],
+};
